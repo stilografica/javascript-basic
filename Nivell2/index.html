@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora - NIVELL 3</title>
+        <!--FONT AWESOME-->
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous">
+        <!--CSS-->
+        <link rel="stylesheet" href="./styles/css/main.css">
+    </head>
+    <body>
+        <!--Screen-->
+        <section>
+            <input type="text" readonly id="resultado" value="" />
+        </section>
+        <!--Central btn-->
+        <section class="central-btn">
+            <article class="num-btn">
+                <!--Row1-->
+                <section>
+                    <input type="button" value="7" class="number" />
+                    <input type="button" value="8" class="number" />
+                    <input type="button" value="9" class="number" />
+                </section>
+                <!--Row2-->
+                <section>
+                    <input type="button" value="4" class="number" />
+                    <input type="button" value="5" class="number" />
+                    <input type="button" value="6" class="number" />
+                </section>
+                <!--Row3-->
+                <section>
+                    <input type="button" value="1" class="number" />
+                    <input type="button" value="2" class="number" />
+                    <input type="button" value="3" class="number" />
+                </section>
+                <!--Row4-->
+                <section>
+                    <input type="button" value="." class="number" />
+                    <input type="button" value="0" class="number" />
+                    <!--Reset button-->
+                    <input type="button" value="c" id="reset" />
+                </section>
+            </article>
+            <!--Side column-->
+            <article class="side">
+                <input type="button" value="+" class="operador" />
+                <input type="button" value="-" class="operador" />
+                <input type="button" value="x" class="operador" />
+                <input type="button" value="÷" class="operador" />
+            </article>
+            <article>
+                <!--Equal btn-->
+                <input type="button" value="="id="igual" />
+            </article>
+        </section>
+        <!--JAVASCRIPT-->
+        <script>
+            //Collect all numbers in an array
+            let numbers = document.getElementsByClassName('number'); 
+            //Collect the screen in an variable
+            let screen = document.getElementById('resultado'); 
+            //Collect all operators in an array
+            let operadores = document.getElementsByClassName('operador'); 
+
+            //Reset button "C"
+            document.getElementById("reset").addEventListener("click", function(){
+                screen.value = "";
+                //Reset variable values
+                clear();
+            });
+
+            //aux variable
+            let aux;
+            //num1
+            let num1 = "";
+            //num2
+            let num2 = "";
+            //operator
+            let operador;
+
+            for(let i = 0; i < numbers.length; i++){
+                //Make event listener on array of numbers
+                numbers[i].addEventListener("click", function(){
+                    //addScreen(this.value);
+                    if(aux == true){
+                        numbers[i];
+                        num2 += numbers[i].value;
+                        screen.value = num2;
+                    } else{
+                        numbers[i];
+                        num1 += numbers[i].value;
+                        screen.value = num1;
+                    }
+                });
+            }
+
+            for(let i = 0; i < operadores.length; i++){
+                //Make event listener on array of operators
+                operadores[i].addEventListener("click", function(){
+                    //addScreen(this.value);
+                    aux = true;
+                    operador = operadores[i].value;
+                    screen.value = operador;
+                });
+            }
+            //Collect "=" and make event listener
+            document.getElementById("igual").addEventListener("click", function(){
+                switch (operador) {
+                    case "+":
+                        screen.value = parseFloat(num1)+parseFloat(num2);
+                        clear();
+                        break;
+                    case "-":
+                        screen.value = parseFloat(num1)-parseFloat(num2);
+                        clear();
+                        break;
+                    case "x":
+                        screen.value = parseFloat(num1)*parseFloat(num2);
+                        clear();
+                        break;
+                    case "÷":
+                        //If the denominator is "0" I indicate to the user that it is impossible
+                        if(num2=="0"){
+                            screen.value= `ERROR`;
+                            clear();
+                        }else{
+                            screen.value = parseFloat(num1)/parseFloat(num2);
+                            clear();
+                        }
+                        break;
+                }
+            });
+
+            //Reset variable values & aux value
+            function clear(){
+                num1 = "";
+                num2 = "";
+                aux = false;
+            }
+        </script>
+    </body>
+</html>

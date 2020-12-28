@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+</head>
+<body>
+
+        <div id="resultado"></div>
+        <div id="resultado2"></div>
+    
+    <script>
+        //NIVELL1
+        //L'exercici consisteix a crear un fitxer anomenat ciber.html i mostrar per consola un 'Hola mundo'
+        console.log("Hola mundo");
+
+        //Crea un alert que mostri el teu nom
+        alert("¡Me llamo Miriam Hinojo!");
+
+        //Crea una variable que contingui el teu nom i un altre que contingui el teu cognom.
+        let name="Miriam";
+        let lastName="Hinojo";
+        console.log(`Mi nombre es ${name} ${lastName}`);
+
+        //Crea dos variables amb dos números i fes una suma entre ells.
+        let num1=1076;
+        let num2= 93473;
+
+        //let suma=num1+num2; (podemos crear otra variable "suma" y poner el console log de esta forma: console.log(`La suma de ${num1} ${num2} es ${suma}`);)
+        console.log(`La suma de ${num1} ${num2} es ${num1+num2}`);
+
+        //Crea una variable nota_examen juntament amb un alert que ens digui si l’examen ha estat aprovat o no juntament amb la nota. (caldrà utilitzar un condicional IF)
+
+        let nota_examen=4;
+
+        if(nota_examen<5){
+            alert(`¡Ohhh, nos vemos de nuevo en septiembre, has sacado un ${nota_examen}!`);
+        } else{
+            alert(`¡Felicidades, pasas de curso con un ${nota_examen}!`);
+        }
+
+        //Reemplaça la paraula blau per la paraula verd del següent text Tinc un cotxe de color blau. 
+        let frase="Tinc un cotxe de color blau";
+
+        frase=frase.replace("blau", "verd");
+        console.log(frase);
+
+        //Després intenta fer-ho remplaçant les o per les u - "/o/g" para hacerlo global
+        frase=frase.replace("verd", "blau");
+        frase=frase.replace(/o/g,"u")
+        console.log(frase);
+
+        //Donat el seguit llistat d'objectes 'taula', 'cadira', 'ordinador', 'libreta', fer un bucle que mostri per pantalla cada objecte i la seva posició al llistat.
+
+        let objectes=['taula', 'cadira', 'ordinador', 'libreta'];
+
+        for (let i = 0; i < objectes.length; i++) {
+
+            console.log(`L'objecte ${objectes[i]} està a la posició ${i}`);
+        }
+
+        /*Crea una funció anomenada calculadora que tingui com a entrada els següents paràmetres: operador, valor1 i valor2.
+        Estructura de la funció que faci sumes, restes i multiplicacions. El resultat haurà de ser mostrar per pantalla.*/
+		
+			function calculadora(operador, valor1, valor2){
+                //Pasar el operador a minúsculas por si el usuario pasara el dato en mayúsculas.
+                operador=operador.toLocaleLowerCase();
+                //Los tres posibles casos y el resultado que darían.
+                switch (operador) {
+                    case "suma":
+                        resultat=valor1+valor2;
+                        break;
+                    case "resta":
+                        resultat=valor1-valor2;
+                        break;
+                    case "multiplicació":
+                        resultat=valor1*valor2;
+                        break;
+                }
+                //Pasar por pantalla el resultado
+                document.getElementById("resultado").innerHTML=`La ${operador} de ${valor1} y ${valor2} es ${resultat}`;
+			}
+			var resultat = calculadora('resta',40,20);
+           
+    </script>
+</body>
+</html>

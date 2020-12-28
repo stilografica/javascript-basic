@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora - NIVELL 3</title>
+        <!--FONT AWESOME-->
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous">
+        <!--CSS-->
+        <link rel="stylesheet" href="./styles/css/main.css">
+    </head>
+    <body>
+        <header>
+            <!--App logo-->
+            <img src="./img/cuentapp-logo.svg" alt="Logotipo Cuentapp">
+        </header>
+        <main>
+            <!--Left Menu-->
+            <nav>
+                <ul>
+                    <li><i class="fa fa-user"></i></li>
+                    <li><i class="fas fa-piggy-bank"></i></li>
+                    <li class="active"><i class="fas fa-calculator"></i></li>
+                    <li><i class="fas fa-sign-out-alt"></i></li>
+                </ul>
+            </nav>
+            <!--/End Left Menu-->
+            <!--Content-->
+            <article class="content">
+                <article class="calculadora">
+                    <!--Screen-->
+                    <section>
+                        <input type="text" readonly id="resultado" value=""/>
+                    </section>
+                    <!--Central btn-->
+                    <section class="central-btn">
+                        <article class="num-btn">
+                            <!--Row1-->
+                            <section>
+                                <input type="button" value="7" class="number" />
+                                <input type="button" value="8" class="number" />
+                                <input type="button" value="9" class="number" />
+                            </section>
+                            <!--Row2-->
+                            <section>
+                                <input type="button" value="4" class="number" />
+                                <input type="button" value="5" class="number" />
+                                <input type="button" value="6" class="number" />
+                            </section>
+                            <!--Row3-->
+                            <section>
+                                <input type="button" value="1" class="number" />
+                                <input type="button" value="2" class="number" />
+                                <input type="button" value="3" class="number" />
+                            </section>
+                            <!--Row4-->
+                            <section>
+                                <input type="button" value="." class="number" />
+                                <input type="button" value="0" class="number" />
+                                <!--Reset button-->
+                                <input type="button" value="c" id="reset" />
+                            </section>
+                        </article>
+                        <!--Side column-->
+                        <article class="side">
+                            <input type="button" value="+" class="operador" />
+                            <input type="button" value="-" class="operador" />
+                            <input type="button" value="x" class="operador" />
+                            <input type="button" value="÷" class="operador" />
+                        </article>
+                        <article>
+                            <!--Equal btn-->
+                            <input type="button" value="=" id="igual" />
+                        </article>
+                    </section>
+                </article>
+            </article>
+            <!--/End content-->
+        </main>
+        <!--JAVASCRIPT-->
+        <script src="./js/main.js"></script>
+    </body>
+</html>
