@@ -2,9 +2,7 @@
 
 _Ejercicio de Javascript Básico para IT Academy itinerario Frontend_
 
-## Inicio 📋
-
-### Instalación 🔧
+## Instalación 🔧
 
 _Descargar todos los archivos:_
 * **Nivell 1: ejecutar archivo _ciber.html_**
@@ -13,6 +11,9 @@ _Descargar todos los archivos:_
 
 **Live version nivell 3-> https://codepen.io/miriterapia/pen/VwKyKdX**
 
+### Comentarios 📋
+
+_Las calculadoras de nivell 2 y nivell 3 sólo permiten hacer operaciones con dos números, para realizar otra operación es necesario hacer click sobre el botón "c"_
 
 ## Construido con 🛠️
 
@@ -21,4 +22,5 @@ _Descargar todos los archivos:_
 * Javascript
 
 ---
-Hecho con diversión y pasión por [Miriam Hinojo](https://github.com/stilografica/)
+
+Con pasión 🚀 por [Miriam Hinojo](https://github.com/stilografica/)
